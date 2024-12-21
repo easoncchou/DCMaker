@@ -1,0 +1,3 @@
+.venv
+DC_Logic/db.sqlite3
+DC_Logic/DC_Backend/.env

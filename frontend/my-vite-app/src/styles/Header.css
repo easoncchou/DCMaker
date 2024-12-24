@@ -1,0 +1,17 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    position: absolute;
+    height: 7vh;
+    width: 99.7vw;
+    margin: 0;
+    padding: 0 0 0 0;
+    font-size: 2.5em;
+    line-height: 1.5;
+    /* border: 2px solid red; */
+    background-color: #00141b;
+    z-index: 2;
+}

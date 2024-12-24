@@ -1,0 +1,32 @@
+.bin {
+    position: fixed;
+    top: 88.4vh;
+    left: 0;
+    height: 11%;
+    width: 247px;
+    padding: 0 0 2px 0;
+    background-color: #221930;
+    color: white;
+    transition: width 0.3s ease; /* Transition for width */
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border: 2px solid rgb(110, 0, 0);
+}
+
+.bin p {
+    font-size: 96px; /* Increase the font size for the emoji */
+    margin: 0; /* Remove any default margin around the emoji */
+}
+
+.bin.closed {
+    width: 0;  /* Animate width to 0 when closed */
+    padding: 0; /* Optionally remove padding when closed */
+    border: none;
+}
+
+.bin.hover {
+    background-color: rgb(110, 0, 0);
+}

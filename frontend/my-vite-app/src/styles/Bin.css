@@ -1,8 +1,8 @@
 .bin {
     position: fixed;
-    top: 88.4vh;
+    bottom: 0px;
     left: 0;
-    height: 11%;
+    height: 14%;
     width: 247px;
     padding: 0 0 2px 0;
     background-color: #221930;

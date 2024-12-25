@@ -1,8 +1,8 @@
 .factory {
     position: fixed;
-    top: 17vh;
+    top: 158px;
     left: 0;
-    height: 40%; /* Default height when open */
+    height: 280px; /* Default height when open */
     width: 247px; /* Default width when open */
     padding: 0; /* Avoid extra padding issues */
     background-color: #221930;

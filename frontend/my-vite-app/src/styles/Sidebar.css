@@ -1,7 +1,7 @@
 /* Sidebar container */
 .sidebar {
     position: fixed;
-    top: 7vh;
+    top: 64px;
     left: 0;
     height: 100%;
     width: 250px;
@@ -20,6 +20,7 @@
 /* Sidebar menu items */
 .sidebar .menu {
     margin-top: 40px;
+    height: 48px;
 }
 
 .sidebar .menu a {

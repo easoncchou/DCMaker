@@ -6,11 +6,12 @@ const Cell = ({ id, top_x, top_y, width, height, moveGate, children }) => {
 
     const [, drop] = useDrop(() => ({
         accept: ItemTypes.GATE,
+        canDrop: () => (children === null),
         drop: (item) => {
             // Accessing the dragged item's id
             moveGate(item.id, top_x, top_y);
         },
-    }), [top_x, top_y]);
+    }), [children, top_x, top_y]);
 
     return (
         <div

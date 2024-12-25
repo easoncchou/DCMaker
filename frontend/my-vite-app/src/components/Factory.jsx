@@ -3,7 +3,7 @@ import Gate from '../components/Gate';
 import Cell from '../components/Cell'
 import '../styles/Factory.css';
 
-const Factory = ( { isOpen, makeGate, moveGate } ) => {
+const Factory = ( { isOpen, makeGate } ) => {
 
     const [gate, setGate] = useState(null);
 
@@ -12,6 +12,9 @@ const Factory = ( { isOpen, makeGate, moveGate } ) => {
     }
 
     function handleClick(gateType, numInputs, numOutputs) {
+        if (gate !== null) {
+            return;
+        }
         const id = makeGate(gateType, numInputs, numOutputs);
         setGate(<Gate id={id} resetFactory={resetFactory}/>);
     }

@@ -14,7 +14,7 @@
     flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Align items at the start of the container */
     align-items: center; /* Center horizontally */
-    border: 2px solid rgb(99, 0, 110);
+    border: 2px solid rgb(84, 0, 110);
 }
 
 .factory.closed {
@@ -31,7 +31,7 @@
     height: 80%;
     transition: width 0.3s ease, height 0.3s ease; /* Add smooth transition */
     /* border: 2px solid red; */
-    padding: 2rem 0 0 125px;
+    padding: 2rem 0 0 144px;
 }
 
 .spawnpoint.closed {

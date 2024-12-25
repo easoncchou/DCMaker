@@ -18,7 +18,7 @@ const Sidebar = ( { deleteGate, makeGate, moveGate } ) => {
       <div className="menu">
         <a>Help</a>
       </div>
-      <Factory isOpen={isOpen} makeGate={makeGate} moveGate={moveGate}/>
+      <Factory isOpen={isOpen} makeGate={makeGate} />
       <Bin isOpen={isOpen} deleteGate={deleteGate}/>
     </div>
   );

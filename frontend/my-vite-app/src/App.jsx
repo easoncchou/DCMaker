@@ -11,8 +11,16 @@ function App() {
     const [available_id, set_available_id] = useState(0); 
 
     const gates_init = [
-        // {id: 0, top_x: 10, top_y: 10,  width: 2, height: 2, type: "AND"}
-        // ,{id: 1, top_x: 15, top_y: 12,  width: 3, height: 3}
+        // {id: 0, 
+        //  top_x: 10, 
+        //  top_y: 10,  
+        //  width: 2, 
+        //  height: 2, 
+        //  gateType: "AND", 
+        //  numInputs: "2", 
+        //  numOutputs: "1", 
+        //  inputs: [], 
+        //  outputs: []}
     ];
 
     const [gates, setGates] = useState(gates_init)
@@ -39,7 +47,7 @@ function App() {
         });
     }
 
-    function makeGate(gate_type, num_inputs, num_outputs) {
+    function makeGate(gateType, numInputs, numOutputs) {
         // Capture the current available_id
         const currentId = available_id;
     
@@ -49,15 +57,15 @@ function App() {
             top_x: -1,
             top_y: -1,
             width: 2,
-            height: Math.max(num_inputs, num_outputs),
-            type: gate_type,
-            num_inputs: num_inputs,
-            num_outputs: num_outputs,
+            height: Math.max(numInputs, numOutputs),
+            gateType: gateType,
+            numInputs: numInputs,
+            numOutputs: numOutputs,
             inputs: [],
             outputs: []
         };
     
-        console.log(newGate.id);
+        // console.log(newGate.id);
     
         // Update state
         set_available_id(prev_available_id => prev_available_id + 1); // Increment ID

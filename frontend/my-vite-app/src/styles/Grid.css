@@ -23,6 +23,10 @@
     animation: borderColorCycle 4s infinite alternate;
 }
 
+.grid-cell.hover {
+    background-color: #2d695f;
+}
+
 /* Define the animation */
 @keyframes borderColorCycle {
     0% {

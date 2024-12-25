@@ -12,7 +12,7 @@ const Gate = ( {gateType, id, resetFactory = null} ) => {
             isDragging: !!monitor.isDragging()
         }),
         end: (item, monitor) => {
-            if (monitor.didDrop()) {
+            if (monitor.didDrop() && resetFactory !== null) {
                 resetFactory();
             }
         }

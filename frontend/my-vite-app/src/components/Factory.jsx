@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Gate from '../components/Gate';
-import Cell from '../components/Cell'
+import Cell from '../components/Cell';
 import '../styles/Factory.css';
 
 const Factory = ( { isOpen, makeGate } ) => {
@@ -16,7 +16,7 @@ const Factory = ( { isOpen, makeGate } ) => {
             return;
         }
         const id = makeGate(gateType, numInputs, numOutputs);
-        setGate(<Gate id={id} resetFactory={resetFactory}/>);
+        setGate(<Gate id={id} gateType={gateType} resetFactory={resetFactory}/>);
     }
 
     return (

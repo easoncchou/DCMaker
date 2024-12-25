@@ -3,7 +3,7 @@ import Bin from '../components/Bin';
 import Factory from '../components/Factory';
 import '../styles/Sidebar.css';
 
-const Sidebar = ( { deleteGate, makeGate } ) => {
+const Sidebar = ( { deleteGate, makeGate, moveGate } ) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -18,7 +18,7 @@ const Sidebar = ( { deleteGate, makeGate } ) => {
       <div className="menu">
         <a>Help</a>
       </div>
-      <Factory isOpen={isOpen} makeGate={makeGate}/>
+      <Factory isOpen={isOpen} makeGate={makeGate} moveGate={moveGate}/>
       <Bin isOpen={isOpen} deleteGate={deleteGate}/>
     </div>
   );

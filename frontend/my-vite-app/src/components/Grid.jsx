@@ -10,7 +10,7 @@ const Grid = ({ gates, moveGate }) => {
         const y = Math.floor(i / 32);
         const isGateHere = gates.find((element) => x === element.top_x && y === element.top_y);
         console.log(isGateHere?.width);
-        const gate = isGateHere ? <Gate id={isGateHere?.id}/> : null;
+        const gate = isGateHere ? <Gate id={isGateHere?.id} /> : null;
         return (
             <Cell id={i} top_x={x} top_y={y} width={gate ? isGateHere.width : 1} height={gate ? isGateHere.width : 1} moveGate={moveGate}>
                 {gate}

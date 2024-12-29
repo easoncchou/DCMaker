@@ -2,10 +2,48 @@
     color: white;
     background-color: transparent;
     border: 2px solid #83aff0;
-    height: 94%;
+    height: 96%;
     width: 98%;
 }
 
 .gate:hover {
     background-color: #2d695f;
+}
+
+.gate.AND {
+    border-radius: 0 100px 100px 0;
+}
+
+.gate.NOT {
+    width: 0; /* No width */
+    height: 0; /* No height */
+    border-top: 25px solid transparent; /* Top border is transparent */
+    border-bottom: 25px solid transparent; /* Bottom border is transparent */
+    border-right: transparent;
+    border-left: 48px solid #83aff0; /* Left border creates the triangle */
+}
+
+.gate.OR {
+    position: relative;
+    height: 96%;
+    width: 98%;
+    background: transparent;
+    border: 2px solid #83aff0;
+    border-left: none;
+    border-radius: 0 100% 100% 0; /* Rounded curve on the right side */
+}
+
+.gate.OR:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 108%;
+    background: transparent;
+    border-radius: 90%;
+    top: -4%;
+    left: -30%;
+    border: 4px solid #83aff0;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }

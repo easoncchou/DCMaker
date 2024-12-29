@@ -101,7 +101,7 @@ function App() {
             top_x: -1,
             top_y: -1,
             width: 2,
-            height: 2,
+            height: numInputs,
             gateType: gateType,
             numInputs: numInputs,
             numOutputs: numOutputs,

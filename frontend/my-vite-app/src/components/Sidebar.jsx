@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Bin from '../components/Bin';
-import Factory from '../components/Factory';
+import Factory from './Factory';
 import '../styles/Sidebar.css';
 
-const Sidebar = ( { deleteGate, makeGate, moveGate } ) => {
+const Sidebar = ({ deleteGate, makeGate, moveGate }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -19,7 +19,7 @@ const Sidebar = ( { deleteGate, makeGate, moveGate } ) => {
         <a>Help</a>
       </div>
       <Factory isOpen={isOpen} makeGate={makeGate} />
-      <Bin isOpen={isOpen} deleteGate={deleteGate}/>
+      <Bin isOpen={isOpen} deleteGate={deleteGate} />
     </div>
   );
 };

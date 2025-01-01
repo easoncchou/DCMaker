@@ -13,6 +13,7 @@ const Grid = ({ bitmap, gates, moveGate }) => {
         return (
             <Cell key={i} bitmap={bitmap} id={i} top_x={x} top_y={y} width={gate ? isGateHere.width : 1} height={gate ? isGateHere.width : 1} moveGate={moveGate}>
                 {gate}
+                {/* {bitmap[y][x]} */}
             </Cell>
         )
     }
@@ -20,7 +21,7 @@ const Grid = ({ bitmap, gates, moveGate }) => {
     const cells = [];
 
     for (let i = 0; i < 640; i++) {
-        cells.push(renderGrid(i, gates))
+        cells.push(renderGrid(i, gates));
     }
 
     return (

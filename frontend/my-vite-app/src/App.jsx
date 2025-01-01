@@ -24,11 +24,11 @@ function App() {
         //  outputs: []}
     ];
 
-    const [gates, setGates] = useState(gates_init)
+    const [gates, setGates] = useState(gates_init);
 
     const bitmap_init = Array.from({ length: 20 }, () => Array(32).fill(0));
 
-    const [bitmap, setBitmap] = useState(bitmap_init)
+    const [bitmap, setBitmap] = useState(bitmap_init);
 
     return (
         <DndProvider backend={HTML5Backend}>
@@ -36,7 +36,7 @@ function App() {
         <Sidebar deleteGate={deleteGate} makeGate={makeGate} moveGate={moveGate}/>
         <Grid bitmap={bitmap} gates={gates} moveGate={moveGate}/>
         </DndProvider>
-    )
+    );
 
     function moveGate(gate_id, toX, toY) {
         // Update gates first, and use the updated gates state in the bitmap update
@@ -79,9 +79,7 @@ function App() {
     
             return updatedGates; // Return the updated gates
         });
-    }
-    
-    
+    };
 
     function deleteGate(gate_id) {
         setGates(prevGates => {
@@ -89,9 +87,9 @@ function App() {
             console.log(updatedGates);  // Log the new state
             return updatedGates;
         });
-    }
+    };
 
-    function makeGate(gateType, numInputs, numOutputs) {
+    function makeGate(gateType, numInputs, numOutputs, width, height) {
         // Capture the current available_id
         const currentId = available_id;
     
@@ -100,8 +98,8 @@ function App() {
             id: currentId, // Use the captured ID
             top_x: -1,
             top_y: -1,
-            width: 2,
-            height: numInputs,
+            width: width,
+            height: height,
             gateType: gateType,
             numInputs: numInputs,
             numOutputs: numOutputs,
@@ -115,6 +113,14 @@ function App() {
     
         // Return the captured ID
         return currentId;
+    };
+
+    function makeWire(wireType) {
+
+    }
+
+    function updateConnections() {
+        
     }
 }
 

@@ -15,12 +15,14 @@
 }
 
 .gate.NOT {
+    position: relative;
+    left: 1px;
     width: 0; /* No width */
     height: 0; /* No height */
     border-top: 25px solid transparent; /* Top border is transparent */
     border-bottom: 25px solid transparent; /* Bottom border is transparent */
     border-right: transparent;
-    border-left: 48px solid #83aff0; /* Left border creates the triangle */
+    border-left: 51px solid #83aff0; /* Left border creates the triangle */
 }
 
 .gate.OR {
@@ -46,4 +48,166 @@
     border-left: none;
     border-top: none;
     border-bottom: none;
+}
+
+/* 1: #78ff56 | 0: #ee6969 | Z: #eeffea */
+
+.gate.WIRE-HORIZONTAL {
+    position: relative; /* Ensure positioning context for the pseudo-element */
+    height: 50px;
+    width: 50px;
+    border: none;
+}
+
+.gate.WIRE-HORIZONTAL::before {
+    content: ''; /* Empty content to create the line */
+    position: absolute;
+    top: 25px; /* Position the line in the middle of the parent */
+    left: 0;  /* Align the line to the left of the parent */
+    width: 104%; /* Line spans the entire width */
+    height: 4px; /* Line thickness */
+    background-color: #eeffea; /* Line color */
+    transform: translateY(-50%); /* Adjust to exactly center the line vertically */
+}
+
+
+.gate.WIRE-VERTICAL {
+    position: relative; /* Position the pseudo-element relative to the parent */
+    height: 50px;
+    width: 50px;
+    border: none;
+}
+
+.gate.WIRE-VERTICAL::before {
+    content: ''; /* Empty content to create a line */
+    position: absolute;
+    top: 0;
+    left: 23px;  /* Position in the center */
+    width: 4px; /* Line width */
+    height: 100%; /* Line height, adjust as necessary */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-TOPLEFT {
+    position: relative;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    /* background-color: #f0f0f0;  */
+    display: flex; /* To align children */
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.gate.WIRE-TOPLEFT::before {
+    content: '';
+    position: absolute;
+    bottom: 0px; /* Start from the bottom-left corner */
+    left: 23px;
+    width: 4px; /* Line thickness */
+    height: 54%; /* Vertical part of the line */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-TOPLEFT::after {
+    content: '';
+    position: absolute;
+    top: 23px; /* Place at the top of the vertical line */
+    left: 0; /* Align with the left edge */
+    width: 52%; /* Horizontal part of the line */
+    height: 4px; /* Line thickness */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-TOPRIGHT {
+    position: relative;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    /* background-color: #f0f0f0;  */
+    display: flex; /* To align children */
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.gate.WIRE-TOPRIGHT::before {
+    content: '';
+    position: absolute;
+    bottom: 0px; /* Start from the bottom-left corner */
+    left: 23px;
+    width: 4px; /* Line thickness */
+    height: 54%; /* Vertical part of the line */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-TOPRIGHT::after {
+    content: '';
+    position: absolute;
+    top: 23px; /* Place at the top of the vertical line */
+    left: 25px; /* Align with the left edge */
+    width: 52%; /* Horizontal part of the line */
+    height: 4px; /* Line thickness */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-BOTLEFT {
+    position: relative;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    /* background-color: #f0f0f0;  */
+    display: flex; /* To align children */
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.gate.WIRE-BOTLEFT::before {
+    content: '';
+    position: absolute;
+    bottom: 23px; /* Start from the bottom-left corner */
+    left: 23px;
+    width: 4px; /* Line thickness */
+    height: 54%; /* Vertical part of the line */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-BOTLEFT::after {
+    content: '';
+    position: absolute;
+    top: 23px; /* Place at the top of the vertical line */
+    left: 0; /* Align with the left edge */
+    width: 52%; /* Horizontal part of the line */
+    height: 4px; /* Line thickness */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-BOTRIGHT {
+    position: relative;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    /* background-color: #f0f0f0;  */
+    display: flex; /* To align children */
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.gate.WIRE-BOTRIGHT::before {
+    content: '';
+    position: absolute;
+    bottom: 23px; /* Start from the bottom-left corner */
+    left: 23px;
+    width: 4px; /* Line thickness */
+    height: 54%; /* Vertical part of the line */
+    background-color: #eeffea; /* Line color */
+}
+
+.gate.WIRE-BOTRIGHT::after {
+    content: '';
+    position: absolute;
+    top: 23px; /* Place at the top of the vertical line */
+    left: 25px; /* Align with the left edge */
+    width: 52%; /* Horizontal part of the line */
+    height: 4px; /* Line thickness */
+    background-color: #eeffea; /* Line color */
 }

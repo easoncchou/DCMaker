@@ -18,10 +18,9 @@ const Gate = ( {gateType, id, resetFactory = null} ) => {
         }
     }));
     
-
     return (
         <div className={`gate ${gateType}`} ref={drag}>
-            {/* {gateType} {id} */}
+            {gateType} {id}
         </div>
     );
 };

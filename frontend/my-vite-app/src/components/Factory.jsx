@@ -14,7 +14,7 @@ const Factory = ({ isOpen, makeGate }) => {
         if (gate !== null) {
             return;
         }
-        const id = makeGate(gateType, numInputs, numOutputs, width, height);
+        const id = makeGate(gateType, numInputs, numOutputs, width, height, -1, -1);
         setGate(<Gate id={id} gateType={gateType} resetFactory={resetFactory} />);
     }
 
@@ -36,22 +36,28 @@ const Factory = ({ isOpen, makeGate }) => {
                     NOT
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-TOPLEFT', 1, 1, 1, 1)}>
-                    ↰ 
+                    ┐ (q)
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-VERTICAL', 1, 1, 1, 1)}>
-                    &#8597;
+                    &#8597; (w)
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-TOPRIGHT', 1, 1, 1, 1)}>
-                    ↱
+                    ┌ (e)
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-BOTLEFT', 1, 1, 1, 1)}>
-                    ↲
+                    ┘ (a)
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-HORIZONTAL', 1, 1, 1, 1)}>
-                    &#8596;
+                    &#8596; (s)
                 </button>
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-BOTRIGHT', 1, 1, 1, 1)}>
-                    ↳
+                    └ (d)
+                </button>
+                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('SWITCH-OFF', 0, 1, 1, 1)}>
+                    SWITCH
+                </button>
+                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('LED-OFF', 1, 0, 1, 1)}>
+                    LED
                 </button>
             </div>
         </div>

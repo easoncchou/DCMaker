@@ -1,0 +1,23 @@
+.led-off {
+    width: 50px;
+    height: 46px;
+    background-color: none; /* Gray when neutral/off */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
+    border: 3px solid black;
+    border-bottom: 6px solid black;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.led-on {
+    width: 50px;
+    height: 46px;
+    background: linear-gradient(145deg, #adee78, #53ce59); /* Brighter gradient from yellow-green to dark green */
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.7), 0 0 40px rgba(76, 175, 80, 0.5); /* Radial glowing effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 0 10px rgb(123, 255, 103); /* Subtle shadow for the "neutral" state */
+    border: 3px solid black;
+    border-bottom: 6px solid black;
+    border-radius: 10px;
+    z-index: 3;
+}

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Gate from './Gate';
+import Switch from '../components/Switch';
+import Led from '../components/Led';
 import '../styles/Factory.css';
 
 const Factory = ({ isOpen, makeGate }) => {
@@ -14,8 +16,21 @@ const Factory = ({ isOpen, makeGate }) => {
         if (gate !== null) {
             return;
         }
-        const id = makeGate(gateType, numInputs, numOutputs, width, height, -1, -1);
-        setGate(<Gate id={id} gateType={gateType} resetFactory={resetFactory} />);
+        var id;
+        switch (gateType) {
+            case 'LED':
+                id = makeGate(gateType, numInputs, numOutputs, width, height, -1, -1);
+                setGate(<Led id={id} isOn={false} resetFactory={resetFactory} />);
+                break;
+            case 'SWITCH':
+                id = makeGate(gateType, numInputs, numOutputs, width, height, -1, -1);
+                setGate(<Switch id={id} resetFactory={resetFactory} />);
+                break;
+            default:
+                id = makeGate(gateType, numInputs, numOutputs, width, height, -1, -1);
+                setGate(<Gate id={id} gateType={gateType} resetFactory={resetFactory} />);
+                break;
+        }
     }
 
     return (
@@ -53,10 +68,10 @@ const Factory = ({ isOpen, makeGate }) => {
                 <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('WIRE-BOTRIGHT', 1, 1, 1, 1)}>
                     └ (d)
                 </button>
-                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('SWITCH-OFF', 0, 1, 1, 1)}>
+                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('SWITCH', 0, 1, 1, 1)}>
                     SWITCH
                 </button>
-                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('LED-OFF', 1, 0, 1, 1)}>
+                <button className={`factory-button ${isOpen ? 'open' : 'closed'}`} onClick={() => handleClick('LED', 1, 0, 1, 1)}>
                     LED
                 </button>
             </div>

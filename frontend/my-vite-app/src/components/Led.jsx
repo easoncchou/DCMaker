@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { ItemTypes  } from '../Constants';
 import { useDrag } from 'react-dnd';
-import '../styles/Gate.css';
+import '../styles/Led.css';
 
-const Gate = ( {gateType, id, resetFactory = null} ) => {
+const Led = ( {isOn, id, resetFactory = null} ) => {
 
     const [{ isDragging }, drag] = useDrag(() => ({
         type: ItemTypes.GATE,
@@ -19,10 +18,10 @@ const Gate = ( {gateType, id, resetFactory = null} ) => {
     }));
     
     return (
-        <div className={`gate ${gateType}`} ref={drag}>
-            {/* {gateType} {id} */}
+        <div className={`led-${isOn ? 'on' : 'off'}`} ref={drag}>
+            led {id}
         </div>
     );
 };
 
-export default Gate;
+export default Led;

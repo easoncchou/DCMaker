@@ -18,6 +18,7 @@ const Bin = ( { isOpen, deleteGate } ) => {
     return (
         <div className={`bin ${isOpen ? 'open' : 'closed'} ${isOver ? 'hover' : ''}`} ref={drop}>
             <p>&#128465;</p>
+            (backspace / x)
         </div>
     );
 };

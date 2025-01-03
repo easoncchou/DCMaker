@@ -72,6 +72,16 @@ function App() {
                         }
                     }
                     break;
+                case 'x':
+                    for (let i = 0; i < gates.length; i++) {
+                        if (gates[i].top_x ===  mousePosition.x &&
+                            gates[i].top_y === mousePosition.y) 
+                        {   
+                            console.log(gates[i]?.id);
+                            deleteGate(gates[i]?.id);
+                        }
+                    }
+                    break;
             }
         };
 
@@ -91,7 +101,7 @@ function App() {
         <Sidebar deleteGate={deleteGate} makeGate={makeGate} moveGate={moveGate}/>
         <Grid bitmap={bitmap} gates={gates} moveGate={moveGate}/>
         </DndProvider>
-    );
+    )
 
     function moveGate(gate_id, toX, toY) {
         // Update gates first, and use the updated gates state in the bitmap update
@@ -134,7 +144,7 @@ function App() {
     
             return updatedGates; // Return the updated gates
         });
-    };
+    }
 
     function deleteGate(gate_id) {
         setGates(prevGates => {
@@ -164,7 +174,7 @@ function App() {
             console.log(updatedGates);  // Log the new state
             return updatedGates;
         });
-    };
+    }
 
     function makeGate(gateType, numInputs, numOutputs, width, height, x, y) {
         // Capture the current available_id
@@ -190,7 +200,7 @@ function App() {
     
         // Return the captured ID
         return currentId;
-    };
+    }
 
     function makeWire(wireType, x, y) {
         // Check if the bitmap position is empty (0)
@@ -210,7 +220,6 @@ function App() {
         }
     }
     
-
     function updateConnections() {
         
     }
